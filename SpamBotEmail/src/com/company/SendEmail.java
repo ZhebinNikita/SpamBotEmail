@@ -17,13 +17,14 @@ public class SendEmail implements Runnable  { // New Task for Thread
 
     private int countRepeat = 0;
     private long delay = 0;
+    private int num;  // итератор для списка почтовых ящиков
 
 
-
-    public SendEmail(int countRepeat, long delay)
+    public SendEmail(int countRepeat, long delay, int num)
     {
         this.countRepeat = countRepeat;
         this.delay = delay;
+        this.num = num;
     }
 
 
@@ -34,7 +35,7 @@ public class SendEmail implements Runnable  { // New Task for Thread
         try {
             for (int i = 0; i < countRepeat; i++) {
 
-                sendSimpleMessage(EmailData.login, EmailData.password, EmailData.address, EmailData.address,
+                sendSimpleMessage(EmailData.login, EmailData.password, EmailData.address, EmailData.adresses[num],
                         EmailData.content, EmailData.subject, EmailData.smtpPort, EmailData.smtpHost);
 
                 TimeUnit.MILLISECONDS.sleep(delay); // 4 sek

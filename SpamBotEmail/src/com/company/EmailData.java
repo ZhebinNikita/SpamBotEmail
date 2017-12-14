@@ -1,5 +1,7 @@
 package com.company;
 
+
+
 public class EmailData {
 
     public static String subject = "SpamBotEmail";
@@ -10,6 +12,8 @@ public class EmailData {
 
 
     public static String address="java-task02@rambler.ru";
+    public static String address2="java-task02@rambler.ru";
+    public static String adresses[] = {address, address2};
 
 
     public static  String login="java-task02";
